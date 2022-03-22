@@ -1,0 +1,34 @@
+<h1>Ejemplos de directivas:</h1>
+<h2>Directiva ngClass</h2>
+<h3 [ngClass]="booleano ? 'texto-error' : 'texto-exito'">Valor la variable: {{ getValor() }} </h3>
+<button (mouseenter)="ingresoMouse()" (click)="hiceClick(valor)">Clickeame</button>
+
+<h2>Directiva ngStyle</h2>
+<h3 [style.border]="valor < 5 ? '1px solid black' : '1px solid green'">Valor la variable: {{ getValor() }} </h3>
+
+<h2>Directiva personalizada</h2>
+<h3 fondoGris>Valor la variable: {{ getValor() }} </h3>
+
+<h2>Directiva estructurada</h2>
+<ol>
+    <li *ngFor="let d of docentes">{{ d.nombre }}</li>
+</ol>
+
+<h2>Directiva condicional (ngIf):</h2>
+<p *ngIf="valor > 5">
+    El valor {{valor}} se está mostrando
+</p>
+
+<h2>Directiva condicional (ngSwitch):</h2>
+<div [ngSwitch]="valor">
+    <span *ngSwitchCase="5">Caso 1 para el valor {{valor}}</span>
+    <span *ngSwitchCase="2">Caso 2 para el valor {{valor}}</span>
+    <span *ngSwitchCase="1">Caso 3 para el valor {{valor}}</span>
+    <span *ngSwitchDefault>Caso por defecto</span>
+</div>
+
+<h2>One-way Binding:</h2>
+<img [src]="urlImagen" alt="deportista">
+
+<h2>Two-Way Binding:</h2>
+<input type="number" [(ngModel)]="valor">

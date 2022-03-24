@@ -1,6 +1,6 @@
 <h1>Ejemplos de directivas:</h1>
 <h2>Directiva ngClass</h2>
-<h3 [ngClass]="valor < 5 ? 'texto-error' : 'texto-exito'">Valor la variable: {{ getValor() }} </h3>
+<h3 class="alert" [ngClass]="valor < 5 ? 'alert-primary' : 'alert-secondary'">Valor la variable: {{ getValor() }} </h3>
 <button (mouseenter)="ingresoMouse()" (click)="hiceClick(valor)">Clickeame</button>
 
 <h2>Directiva ngStyle</h2>

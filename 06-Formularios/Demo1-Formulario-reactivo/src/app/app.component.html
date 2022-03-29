@@ -1,0 +1,19 @@
+<form [formGroup]="formularioContacto" (ngSubmit)="submit(txtNombre.value)">
+  Nombre: 
+  <input type="text" formControlName="nombre" #txtNombre>
+  <p *ngIf="formularioContacto.get('nombre')?.errors?.['required']">El control Nombre es obligatorio</p>
+  <p *ngIf="formularioContacto.get('nombre')?.errors?.['minlength']">El control Nombre debe tener al menos 10 caracteres</p>
+  Email: 
+  <input type="text" formControlName="email">
+  <p *ngIf="formularioContacto.get('email')?.errors?.['required']">El control Email es obligatorio</p>
+  <p *ngIf="formularioContacto.get('email')?.errors?.['email']">El formato del correo es incorrecto</p>
+  Mensaje: 
+  <textarea rows="10" cols="70" formControlName="mensaje"></textarea>
+  
+  <button type="submit">Confirmar</button>
+</form> 
+
+<h4>Valores del form</h4>
+<p>Nombre: {{ formularioContacto.get('nombre')?.value }} </p>
+<p>Email: {{ formularioContacto.get('email')?.value }} </p>
+<p>Mensaje: {{ formularioContacto.get('mensaje')?.value }}</p>

@@ -1,0 +1,26 @@
+<h1>Formulario basado en plantillas</h1>
+
+<form #formulario="ngForm" class="row g-3" (ngSubmit)="guardarPersona()">
+    <div class="col-md-12">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="persona.nombre">
+    </div>
+    <div class="col-md-12">
+        <label class="form-label">Apellido</label>
+        <input type="text" class="form-control" name="apellido" [(ngModel)]="persona.apellido">
+    </div>
+    <div class="col-md-12">
+        <label class="form-label">Edad</label>
+        <input type="text" class="form-control" name="edad" [(ngModel)]="persona.edad">
+    </div>
+
+    <div class="col-md-12">
+        <button class="btn btn-primary" type="submit">Agregar persona</button>
+    </div>
+</form>
+
+<div class="row">
+    <ul class="list-group">
+        <li *ngFor="let p of listaPersonas">{{ p.nombre }} {{ p.apellido }} ({{p.edad}})</li>
+    </ul>
+</div>

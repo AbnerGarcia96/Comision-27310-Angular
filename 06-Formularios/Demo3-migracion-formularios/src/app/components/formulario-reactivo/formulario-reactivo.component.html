@@ -1,0 +1,30 @@
+<h1>Formulario reactivo</h1>
+
+<form class="row g-3" (ngSubmit)="guardarPersona()" [formGroup]="formularioPersona">
+    <div class="col-md-12">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" [ngClass]="formularioPersona.get('nombre')?.errors?.['required'] ? 'is-invalid':'is-valid'">
+        <div *ngIf="formularioPersona.get('nombre')?.errors?.['required']" class="invalid-feedback">El campo Nombre es requerido</div>
+    </div>
+    <div class="col-md-12">
+        <label class="form-label">Apellido</label>
+        <input type="text" class="form-control" formControlName="apellido" [ngClass]="formularioPersona.get('apellido')?.errors?.['required'] ? 'is-invalid':'is-valid'">
+        <div *ngIf="formularioPersona.get('apellido')?.errors?.['required']" class="invalid-feedback">El campo Apellido es requerido</div>
+    </div>
+    <div class="col-md-12">
+        <label class="form-label">Edad</label>
+        <input type="text" class="form-control" formControlName="edad" [ngClass]="formularioPersona.get('edad')?.errors?.['required'] || formularioPersona.get('edad')?.errors?.['pattern']? 'is-invalid':'is-valid'">
+        <div *ngIf="formularioPersona.get('edad')?.errors?.['required']" class="invalid-feedback">El campo Edad es requerido</div>
+        <div *ngIf="formularioPersona.get('edad')?.errors?.['pattern']" class="invalid-feedback">El campo Edad debe ser numérico</div>
+    </div>
+
+    <div class="col-md-12">
+        <button class="btn btn-primary" [disabled]="formularioPersona.invalid" type="submit">Agregar persona</button>
+    </div>
+</form>
+
+<div class="row">
+    <ul class="list-group">
+        <li *ngFor="let p of listaPersonas">{{ p.nombre }} {{ p.apellido }} ({{p.edad}})</li>
+    </ul>
+</div>

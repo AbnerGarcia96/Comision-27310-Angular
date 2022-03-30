@@ -1,0 +1,8 @@
+.tarjeta {
+    width: 400px;
+}
+
+.imagen-titulo-tarjeta {
+    background-image: url('https://i0.wp.com/edtechreviews.net/wp-content/uploads/2021/12/coderhouse_logo.png');
+    background-size: cover;
+}

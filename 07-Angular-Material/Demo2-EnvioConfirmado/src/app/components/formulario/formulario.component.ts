@@ -11,14 +11,14 @@ import { ContenidoDialogComponent } from '../contenido-dialog/contenido-dialog.c
 export class FormularioComponent implements OnInit {
   formulario: FormGroup = new FormGroup({
     nombre: new FormControl('', [Validators.required]),
-    comidaFavorita: new FormControl('', [Validators.required])
+    comidaFavorita: new FormControl('', [Validators.required]),
+    fecha: new FormControl('')
   });
   listaPersonas: any[] = [];
 
   constructor(public dialog: MatDialog) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   agregar(){
     this.listaPersonas.push(this.formulario.value);

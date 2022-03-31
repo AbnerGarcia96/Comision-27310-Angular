@@ -1,12 +1,28 @@
-<form>
+<form [formGroup]="formulario" (ngSubmit)="agregar()">
     <mat-card>
         <mat-card-title>Formulario</mat-card-title>
         <mat-card-content>
-            Nombre <br>
-            Comida favorita
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input type="text" formControlName="nombre" matInput>
+            </mat-form-field> <br>
+            <mat-form-field>
+                <mat-label>Fecha</mat-label>
+                <input type="date" formControlName="fecha" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Comida favorita</mat-label>
+                <mat-select formControlName="comidaFavorita">
+                    <mat-option value="Sushi">Sushi</mat-option>
+                    <mat-option value="Pollo">Pollo</mat-option>
+                    <mat-option value="Milanesa">Milanesa</mat-option>
+                    <mat-option value="PizzaPiña">Pizza con piña</mat-option>
+                </mat-select>
+            </mat-form-field>
         </mat-card-content>
+
         <mat-card-actions align="end">
-            <button >Agregar</button>
+            <button type="submit" mat-raised-button color="primary" [disabled]="formulario.invalid">Agregar</button>
         </mat-card-actions>
     </mat-card>
 </form>

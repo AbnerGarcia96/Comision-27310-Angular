@@ -1,0 +1,9 @@
+<h1>Cursos</h1>
+<div *ngFor="let curso of cursos">
+    <mat-card style="width: 400px;">
+        <mat-card-title>{{curso.nombre}}</mat-card-title>
+        <mat-card-subtitle>{{curso.duracion | cursoFecha | uppercase}}</mat-card-subtitle>
+        <mat-card-content>{{curso.descripcion}}</mat-card-content>
+    </mat-card>
+    <br>
+</div>

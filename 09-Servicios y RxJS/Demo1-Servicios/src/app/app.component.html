@@ -1,0 +1,6 @@
+<form [formGroup]="formulario" (ngSubmit)="agregarCurso()">
+  <input type="text" placeholder="Id" formControlName="id"> <br>
+  <input type="text" placeholder="Nombre" formControlName="nombre"> <br>
+  <input type="text" placeholder="Descripcion" formControlName="descripcion"> <br>
+  <button type="submit" [disabled]="formulario.invalid">Guardar</button>
+</form>

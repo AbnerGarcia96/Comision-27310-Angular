@@ -1,3 +1,12 @@
+<div *ngFor="let curso of cursos">
+  <div>
+    ({{ curso.id }}) {{ curso.nombre }} - {{ curso.descripcion }}
+  </div>
+  <button (click)="eliminarCurso(curso.id)">Eliminar</button>
+</div>
+
+<hr>
+
 <form [formGroup]="formulario" (ngSubmit)="agregarCurso()">
   <input type="text" placeholder="Id" formControlName="id"> <br>
   <input type="text" placeholder="Nombre" formControlName="nombre"> <br>

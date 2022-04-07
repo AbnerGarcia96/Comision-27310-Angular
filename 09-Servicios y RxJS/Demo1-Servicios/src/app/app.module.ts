@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CursoBetaService } from './services/curso-beta.service';
-import { CursosService } from './services/cursos.service';
+import { CursoService } from './services/curso.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { CursosService } from './services/cursos.service';
     ReactiveFormsModule
   ],
   providers: [
-    CursosService
+    CursoService
   ],
   bootstrap: [AppComponent]
 })

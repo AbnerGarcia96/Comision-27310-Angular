@@ -23,5 +23,21 @@ export class RxjsService {
       edad: 30
     },
   ];
+
+  datos$: Observable<Persona[]>;
+
+  constructor(){
+    this.datos$ = of(this.datos);
+  }
+
+  obtenerDatos(): Observable<Persona[]>{
+    return this.datos$;
+  }
+
+  obtenerDatosFiltrados(): Observable<Persona[]> {
+    return this.datos$.pipe(
+      map(personas => personas.filter(persona => persona.edad > 25))
+    );
+  }
   
 }

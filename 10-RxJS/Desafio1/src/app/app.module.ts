@@ -3,7 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { RxjsService } from './services/rxjs.service';
+import { DatosService } from './services/datos.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -11,10 +15,12 @@ import { RxjsService } from './services/rxjs.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [
-    RxjsService
+    DatosService
   ],
   bootstrap: [AppComponent]
 })

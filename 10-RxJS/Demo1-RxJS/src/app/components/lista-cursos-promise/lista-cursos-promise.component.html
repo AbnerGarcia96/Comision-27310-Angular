@@ -6,3 +6,14 @@
         <mat-divider></mat-divider>
     </mat-list-item>
 </mat-list>
+
+<mat-divider></mat-divider>
+
+<mat-list>
+    <div mat-subheader>Cursos Promise</div>
+    <mat-list-item *ngFor="let curso of cursosPromise | async">
+        <div mat-line>{{ curso.nombre }}</div>
+        <div mat-line>{{ curso.camada }}</div>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+</mat-list>

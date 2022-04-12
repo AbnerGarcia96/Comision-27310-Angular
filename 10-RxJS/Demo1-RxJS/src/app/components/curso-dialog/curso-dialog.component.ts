@@ -25,7 +25,13 @@ export class CursoDialogComponent implements OnInit {
   ngOnInit(): void {}
 
   actualizarCurso(){
-    
+    let curso: any = {
+      id: this.data.id,
+      nombre: this.formulario.value.nombre,
+      camada: this.formulario.value.camada
+    };
+    this.rxjsService.modificarCurso(curso);
+    this.dialogRef.close({mensaje: "Mensaje"});
   }
 
 }

@@ -1,0 +1,11 @@
+.espacio {
+    flex: 1 1 auto;
+}
+
+.pr-1{
+    padding-right: 1em;
+}
+
+.m-1{
+    margin: 1em;
+}

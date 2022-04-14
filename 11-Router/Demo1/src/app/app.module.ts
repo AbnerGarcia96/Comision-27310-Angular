@@ -1,26 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppMaterialModule } from './app.material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { CursoComponent } from './components/curso/curso.component';
 import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
-import { AppRoutingModule } from './app.routing.module';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppMaterialModule } from './app.material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    CursoComponent,
-    PaginaNoEncontradaComponent
+    PaginaNoEncontradaComponent,
+    CursosComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
-    AppMaterialModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

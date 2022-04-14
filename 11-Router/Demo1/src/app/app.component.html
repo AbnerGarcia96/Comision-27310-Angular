@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    <span>Demo 1 - Rutas</span>
+    <div class="espaciador"></div>
+    <a mat-button [routerLink]="enlace">Mi perfil</a>
+    <button mat-button (click)="irCursos()">Cursos</button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

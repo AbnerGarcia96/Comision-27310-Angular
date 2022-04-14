@@ -6,12 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
+  title = 'Demo1';
+  enlace = 'perfil'
   constructor(
     private router: Router
   ){}
 
   irCursos(){
-    this.router.navigate(['cursos']);
+    this.router.navigate(['curso']);
   }
 }

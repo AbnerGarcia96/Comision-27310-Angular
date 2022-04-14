@@ -6,10 +6,17 @@ import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app.material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    InicioComponent,
+    CursosComponent,
+    UsuarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })

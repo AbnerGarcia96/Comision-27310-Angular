@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
   <span class="pr-1" >My App</span>
   <div class="espacio"></div>
-  <a mat-button>
+  <a mat-button [routerLink]="['usuario', 1]">
     Ver usuario
   </a>
-  <button mat-button>
+  <button mat-button (click)="irCursos()">
     Ver cursos
   </button>
 </mat-toolbar>

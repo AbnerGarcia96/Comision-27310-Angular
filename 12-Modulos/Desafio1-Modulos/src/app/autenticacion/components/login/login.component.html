@@ -1,0 +1,9 @@
+<p>Iniciar sesión</p>
+
+<form [formGroup]="formulario" (ngSubmit)="login()">
+    <label>Correo:</label>
+    <input type="text" formControlName="correo"> <br>
+    <label>Contraseña:</label>
+    <input type="password" formControlName="contrasena"> <br>
+    <button type="submit" [disabled]="formulario.invalid">Login</button>
+</form>

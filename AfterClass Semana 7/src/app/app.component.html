@@ -1,0 +1,41 @@
+<router-outlet></router-outlet>
+
+
+<p>La lista de estudiantes:</p>
+
+<br>
+<br>
+<br>
+<form [formGroup]="editingStudentForm">
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>last name</th>
+      <th>delete</th>
+      <th>editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td>
+        <span *ngIf="student.id != editingStudentId">{{student.name}}</span>
+        <input *ngIf="student.id == editingStudentId" type="text" formControlName="firstName"  >
+      </td>
+      <td>
+        <span *ngIf="student.id != editingStudentId">{{student.lastName}}</span>
+        <input *ngIf="student.id == editingStudentId" type="text" formControlName="lastName">
+      </td>
+      <td>
+        <button (click)="onDeleteStudent(student.id)">Eliminar</button>
+      </td>
+      <td>
+        <button *ngIf="student.id != editingStudentId" (click)="onEditStudent(student.id)">Editar</button>
+        <button *ngIf="student.id == editingStudentId" (click)="onUpdateStudent(student.id)">Guardar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>

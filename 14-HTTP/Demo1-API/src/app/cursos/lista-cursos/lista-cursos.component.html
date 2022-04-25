@@ -1,0 +1,15 @@
+<div *ngFor="let curso of cursos" class="container">
+<mat-card>
+    <mat-card-title>{{ curso.nombre }}</mat-card-title>
+    <mat-card-subtitle>Del {{ curso.fechaInicio | date: 'dd/MM/YY'}} al {{ curso.fechaFin | date: 'dd/MM/YY'}}</mat-card-subtitle>
+    <mat-card-content>
+        <p>Profesor: {{ curso.profesor.nombre }} {{ curso.profesor.apellido }}</p>
+        <p>{{ curso.estudiantes.length }} Estudiantes</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-button color="primary" (click)="abrirDialogModificar(curso)">Modificar</button>
+        <button mat-button color="warn" (click)="eliminarCurso(curso.id)">Eliminar</button>
+    </mat-card-actions>
+</mat-card>
+<br>
+</div>

@@ -1,0 +1,37 @@
+{
+  "nombre": "$database.engine",
+  "fechaInicio": "$date.past",
+  "fechaFin": "$date.future",
+  "profesor": {
+    "id": "$datatype.number",
+    "nombre": "$name.firstName",
+    "apellido": "$name.lastName",
+    "correo": "$internet.email"
+  },
+  "estudiantes": [
+    {
+      "id": "$datatype.number",
+      "nombre": "$name.firstName",
+      "apellido": "$name.lastName",
+      "correo": "$internet.email"
+    },
+    {
+      "id": "$datatype.number",
+      "nombre": "$name.firstName",
+      "apellido": "$name.lastName",
+      "correo": "$internet.email"
+    },
+    {
+      "id": "$datatype.number",
+      "nombre": "$name.firstName",
+      "apellido": "$name.lastName",
+      "correo": "$internet.email"
+    },
+    {
+      "id": "$datatype.number",
+      "nombre": "$name.firstName",
+      "apellido": "$name.lastName",
+      "correo": "$internet.email"
+    }
+  ]
+}

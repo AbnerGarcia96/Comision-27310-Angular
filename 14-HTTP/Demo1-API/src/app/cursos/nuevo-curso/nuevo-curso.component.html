@@ -1,0 +1,24 @@
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="crearCurso()">
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre del curso</mat-label>
+            <input type="text" matInput formControlName="nombre">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha de inicio</mat-label>
+            <input type="date" matInput formControlName="fechaInicio">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha de finalización</mat-label>
+            <input type="date" matInput formControlName="fechaFin">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="profesor">
+                <mat-option *ngFor="let profesor of profesores" [value]="profesor">{{ profesor.nombre }} {{ profesor.apellido }}</mat-option>
+            </mat-select>
+        </mat-form-field><br>
+
+        <button mat-raised-button type="submit" [disabled]="formulario.invalid">Crear</button>
+    </form>
+</div>

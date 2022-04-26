@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { CursosRoutingModule } from './cursos-routing.module';
 import { CursosComponent } from './cursos/cursos.component';
-import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
 import { SharedModule } from '../shared/shared.module';
-import { NuevoCursoComponent } from './nuevo-curso/nuevo-curso.component';
+import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
+import { CursosService } from './cursos.service';
 import { EditarCursoDialogComponent } from './editar-curso-dialog/editar-curso-dialog.component';
 
 
@@ -13,7 +13,6 @@ import { EditarCursoDialogComponent } from './editar-curso-dialog/editar-curso-d
   declarations: [
     CursosComponent,
     ListaCursosComponent,
-    NuevoCursoComponent,
     EditarCursoDialogComponent
   ],
   imports: [
@@ -22,6 +21,7 @@ import { EditarCursoDialogComponent } from './editar-curso-dialog/editar-curso-d
     SharedModule
   ],
   providers: [
+    CursosService
   ]
 })
 export class CursosModule { }

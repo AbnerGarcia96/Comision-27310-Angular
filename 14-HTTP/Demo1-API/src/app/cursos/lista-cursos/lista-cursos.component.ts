@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Curso } from 'src/app/core/inicio/modelos/curso';
+import { CursosService } from '../cursos.service';
 import { EditarCursoDialogComponent } from '../editar-curso-dialog/editar-curso-dialog.component';
 
 @Component({
@@ -8,25 +10,28 @@ import { EditarCursoDialogComponent } from '../editar-curso-dialog/editar-curso-
   styleUrls: ['./lista-cursos.component.css']
 })
 export class ListaCursosComponent implements OnInit {
-  cursos!: any[];
+  cursos: Curso[] = [];
 
   constructor(
+    private cursosService: CursosService,
     private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
-    
-  }
-
-  abrirDialogModificar(curso: any){
-    this.dialog.open(EditarCursoDialogComponent, {
-      width: '250px',
-      data: curso,
+    this.cursosService.obtenerCursos().subscribe((cursos: Curso[])=>{
+      this.cursos = cursos;
     });
   }
 
-  eliminarCurso(idCurso: string){
-    
+  abrirDialogModificar(curso: Curso){
+    this.dialog.open(EditarCursoDialogComponent, {
+      width: '300px',
+      data: curso
+    });
+  }
+
+  eliminarCurso(id: string){
+
   }
 
 }

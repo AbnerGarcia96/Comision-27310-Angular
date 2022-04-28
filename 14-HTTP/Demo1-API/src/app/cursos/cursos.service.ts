@@ -7,7 +7,7 @@ import { Curso } from '../core/inicio/modelos/curso';
   providedIn: 'root'
 })
 export class CursosService {
-  private readonly API_URL = 'https://6267324e01dab900f1bc0772.mockapi.io';
+  private readonly API_URL = 'https://6265dce1dbee37aff9a94c90.mockapi.io';
   constructor(
     private http: HttpClient
   ) { }
@@ -21,7 +21,7 @@ export class CursosService {
   }
 
   crearCurso(curso: Curso){
-    
+    return this.http.post<Curso>(`${this.API_URL}/cursos/`, curso).pipe(catchError(this.manejoError));
   }
 
   modificarCurso(curso: Curso){
@@ -29,7 +29,7 @@ export class CursosService {
   }
 
   eliminarCurso(idCurso: string){
-    
+    return this.http.delete<Curso>(`${this.API_URL}/cursos/${idCurso}`).pipe(catchError(this.manejoError));
   }
 
   private manejoError(error: HttpErrorResponse){

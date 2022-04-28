@@ -7,13 +7,15 @@ import { SharedModule } from '../shared/shared.module';
 import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
 import { CursosService } from './cursos.service';
 import { EditarCursoDialogComponent } from './editar-curso-dialog/editar-curso-dialog.component';
+import { NuevoCursoComponent } from './nuevo-curso/nuevo-curso.component';
 
 
 @NgModule({
   declarations: [
     CursosComponent,
     ListaCursosComponent,
-    EditarCursoDialogComponent
+    EditarCursoDialogComponent,
+    NuevoCursoComponent
   ],
   imports: [
     CommonModule,

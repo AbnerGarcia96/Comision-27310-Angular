@@ -1,0 +1,7 @@
+<div *ngIf="sesionActiva.activa">
+<a [routerLink]="''">Ir a inicio</a> <br>
+<a [routerLink]="'cursos'">Ir a cursos</a> <br>
+<a [routerLink]="'admin'" *ngIf="sesionActiva.activa && sesionActiva.usuario.rol == 'admin'">Ir a admin</a> <br>
+<button (click)="logout()">Logout</button>
+</div>
+<router-outlet></router-outlet>

@@ -1,2 +1,2 @@
-Lista de cursos
-<app-lista-cursos></app-lista-cursos>
+<b *ngIf="(cargando$ | async)">Cargando, por favor espere...</b>
+<app-lista-cursos *ngIf="!(cargando$ | async)"></app-lista-cursos>

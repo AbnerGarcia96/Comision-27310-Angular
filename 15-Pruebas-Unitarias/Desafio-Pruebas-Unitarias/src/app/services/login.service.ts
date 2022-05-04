@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { delay, map } from 'rxjs';
 import { Usuario } from '../models/usuario';
 
 @Injectable({
@@ -15,9 +15,13 @@ export class LoginService {
   login(correo: string, contrasena: string){
     return this.http.get<Usuario[]>('https://6265dce1dbee37aff9a94c90.mockapi.io/usuarios').pipe(
       map((usuarios: Usuario[]) => {
-        return usuarios.filter(u => u.correo === correo && u.contrasena === contrasena)
+        return usuarios.filter(u => u.correo === correo && u.contrasena === contrasena)[0]
       })
     )
+  }
+
+  obtenerUsuarios(){
+    return this.http.get<Usuario[]>('https://6265dce1dbee37aff9a94c90.mockapi.io/usuarios');
   }
 
   logout(): any{

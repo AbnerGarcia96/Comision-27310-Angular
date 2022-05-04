@@ -30,11 +30,12 @@ describe('LoginService', () => {
         apellido: "Stroman",
         correo: "Isabella70@yahoo.com",
         contrasena: "Sb_lFB39bUdGLgD",
-        id: "1"
+        id: "4"
       }];
 
-      LoginService.login("Isabella70@yahoo.com", "Sb_lFB39bUdGLgD").subscribe((data) => {
-        expect(data[0].id).toEqual(mockUsuario[0].id);
+      LoginService.login("Isabella70@yahoo.com", "Sb_lFB39bUdGLgD").subscribe((usuarioLogueado) => {
+        console.log(usuarioLogueado);
+        expect(usuarioLogueado.id).toEqual("4");
       });
 
       const req = httpMock.expectOne({

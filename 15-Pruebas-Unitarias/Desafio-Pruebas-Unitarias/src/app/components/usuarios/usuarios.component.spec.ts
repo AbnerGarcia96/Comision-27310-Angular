@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
 
 import { UsuariosComponent } from './usuarios.component';
 
@@ -8,7 +9,8 @@ describe('UsuariosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsuariosComponent ]
+      declarations: [ UsuariosComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   });
@@ -19,23 +21,30 @@ describe('UsuariosComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Los usuarios se asignaron correctamente en el controlador', () => {
+  it(
+    'Los usuarios se estan cargando correctamente', 
+    () => {
     const fixture = TestBed.createComponent(UsuariosComponent);
     const controlador = fixture.componentInstance;
 
     fixture.detectChanges();
+    setTimeout(() => {
+      expect(controlador.usuarios).toBeTruthy();
+    }, 5000);
+  })
 
-    // expect(controlador.usuarios).toBeTruthy();
-    expect(controlador.usuarios.length).toBeGreaterThan(0);
-  }) // validar que los usuarios se carguen correctamente en el controlador
+  it(
+    'La informacion se muestra en pantalla',
+    (done) => {
+      const fixture = TestBed.createComponent(UsuariosComponent);
+      const vista = fixture.nativeElement as HTMLElement;
 
-  it('Los usuarios se renderizaron correctamente en la vista', ()=>{
-    const fixture = TestBed.createComponent(UsuariosComponent);
-    const vista = fixture.nativeElement as HTMLElement;
+      fixture.detectChanges();
 
-    fixture.detectChanges();
-
-    expect(vista.querySelector('div')).toBeTruthy();
-  }) // validar que los usuarios se rendericen correctamente en la vista
+      setTimeout(() => {
+        expect(vista.querySelector('div')).toBeTruthy();
+      }, 5000);
+    }
+  )
 
 });

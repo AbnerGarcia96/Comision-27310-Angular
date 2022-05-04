@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Binvenido(a) {{ usuario.nombre }} {{ usuario.apellido }}</span>
+        <span class="spacer"></span>
+        <button mat-button [routerLink]="''">Inicio</button>
+        <button mat-button (click)="cerrarSesion()">Cerrar Sesión</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around">
+        <div fxFlex="25" class="mb-1" *ngFor="let curso of cursos">
+            <mat-card>
+                <mat-card-title>{{curso.nombre}}</mat-card-title>
+                <mat-card-subtitle>del {{curso.fechaInicio | date: 'dd/MM/YYYY'}} al {{ curso.fechaFin | date: 'dd/MM/YYYY'}}</mat-card-subtitle>
+                <mat-card-content>
+                    <p>Impartido por {{curso.profesor.nombre}} {{curso.profesor.apellido}}</p>
+                    <p>Numero de registrados: {{curso.estudiantes.length}}</p>
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,13 @@
 <form [formGroup]="formulario" (ngSubmit)="login()">
-    <input type="text" placeholder="email" formControlName="correo">
-    <input type="password" placeholder="contrasena" formControlName="contrasena">
-    <button type="submit">Login</button>
+    <mat-form-field>
+        <mat-label>Correo: </mat-label>
+        <input type="text" matInput formControlName="correo">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Contrasena: </mat-label>
+        <input type="password" matInput formControlName="contrasena">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">Login</button>
 </form>

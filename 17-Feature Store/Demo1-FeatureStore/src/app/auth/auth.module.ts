@@ -4,8 +4,10 @@ import { CommonModule } from '@angular/common';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
-import { StoreModule } from '@ngrx/store';
 import { AuthService } from './auth.service';
+import { StoreModule } from '@ngrx/store';
+import { authFeatureKey, authReducer } from './state/auth.reducer';
+
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { AuthService } from './auth.service';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forFeature(authFeatureKey, authReducer)
   ],
-  providers: [
+  providers:[
     AuthService
   ]
 })

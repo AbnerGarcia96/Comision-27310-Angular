@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Bienvenido(a) {{ usuarioActivo.nombre }} {{ usuarioActivo.apellido }}</span>
+        <span class="spacer"></span>
+        <button mat-button routerLink="''">Inicio</button>
+        <button mat-button (click)="logout()">Logout</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+    <div fxLayout="row wrap" fxLayoutAlign="spaced-around">
+        <div class="mb-1" fxFlex="25" *ngFor="let curso of cursos">
+            <mat-card>
+                <mat-card-title>{{ curso.nombre }}</mat-card-title>
+                <mat-card-subtitle>del {{ curso.fechaInicio | date:'dd/MM/YYYY' }} al {{ curso.fechaFin | date:'dd/MM/YYYY' }}</mat-card-subtitle>
+                <mat-card-content>
+                    <p>Impartido por: {{ curso.profesor.nombre }} {{ curso.profesor.apellido }} </p>
+                    <p>Estudiantes registrados: {{ curso.estudiantes.length}} </p>
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <button mat-button>Registrar</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

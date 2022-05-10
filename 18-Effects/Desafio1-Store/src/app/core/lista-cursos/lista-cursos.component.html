@@ -1,0 +1,5 @@
+<div *ngFor="let curso of cursos$ | async">
+    <b>Curso {{ curso.nombre | titlecase }}</b>
+    <p>Impartido por {{ curso.profesor.nombre }} {{ curso.profesor.apellido }}</p>
+    <hr>
+</div>
